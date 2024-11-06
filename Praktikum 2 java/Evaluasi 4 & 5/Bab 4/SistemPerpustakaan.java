@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-// Kelas untuk Buku
 class Buku {
     private String id;
     private String judul;
@@ -32,15 +31,14 @@ class Buku {
         this.tersedia = tersedia;
     }
 
-    @Override
-    public String toString() {
+    
+    public String deskripsi() {
         return "ID: " + id + ", Judul: " + judul + ", Tersedia: " + tersedia;
     }
 }
 
-// Kelas untuk Anggota
 class Anggota {
-    private  String id;
+    private String id;
     private String nama;
 
     public Anggota(String id, String nama) {
@@ -56,17 +54,17 @@ class Anggota {
         return nama;
     }
 
-    @Override
-    public String toString() {
+    
+    public String deskripsi() {
         return "ID: " + id + ", Nama: " + nama;
     }
 }
 
-// Kelas untuk Sistem Perpustakaan
+
 class Perpustakaan {
-    private final  ArrayList<Buku> daftarBuku;
-    private final HashMap<String, Anggota> daftarAnggota;
-    private final Queue<String> antreanPeminjaman;
+    private ArrayList<Buku> daftarBuku;
+    private HashMap<String, Anggota> daftarAnggota;
+    private Queue<String> antreanPeminjaman;
 
     public Perpustakaan() {
         daftarBuku = new ArrayList<>();
@@ -76,12 +74,12 @@ class Perpustakaan {
 
     public void tambahBuku(Buku buku) {
         daftarBuku.add(buku);
-        System.out.println("Buku ditambahkan: " + buku);
+        System.out.println("Buku ditambahkan: " + buku.deskripsi());
     }
 
     public void tambahAnggota(Anggota anggota) {
         daftarAnggota.put(anggota.getId(), anggota);
-        System.out.println("Anggota ditambahkan: " + anggota);
+        System.out.println("Anggota ditambahkan: " + anggota.deskripsi());
     }
 
     public void pinjamBuku(String idBuku, String idAnggota) {
@@ -123,14 +121,14 @@ class Perpustakaan {
     public void tampilkanBuku() {
         System.out.println("Daftar Buku di Perpustakaan:");
         for (Buku buku : daftarBuku) {
-            System.out.println(buku);
+            System.out.println(buku.deskripsi());
         }
     }
 
     public void tampilkanAnggota() {
         System.out.println("Daftar Anggota Perpustakaan:");
         for (Anggota anggota : daftarAnggota.values()) {
-            System.out.println(anggota);
+            System.out.println(anggota.deskripsi());
         }
     }
 
@@ -144,7 +142,6 @@ class Perpustakaan {
     }
 }
 
-// Kelas utama untuk menjalankan program
 public class SistemPerpustakaan {
     public static void main(String[] args) {
         Perpustakaan perpustakaan = new Perpustakaan();
@@ -165,7 +162,7 @@ public class SistemPerpustakaan {
                 System.out.println("5. Keluar");
                 System.out.print("Masukkan pilihan: ");
                 pilihan = scanner.nextInt();
-                scanner.nextLine(); // Konsumsi newline
+                scanner.nextLine(); 
 
                 switch (pilihan) {
                     case 1 -> perpustakaan.tampilkanBuku();

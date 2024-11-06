@@ -1,0 +1,59 @@
+class KaryawanUmum {
+    protected String nama;
+    protected int id;
+    protected double gaji;
+
+    public KaryawanUmum(String nama, int id, double gaji) {
+        this.nama = nama;
+        this.id = id;
+        this.gaji = gaji;
+    }
+
+    public void tampilkanInfoKaryawan() {
+        System.out.println("Nama: " + nama);
+        System.out.println("ID: " + id);
+        System.out.println("Gaji: " + gaji);
+    }
+}
+
+class KaryawanAdministrasi extends KaryawanUmum {
+    private String departemen;
+
+    public KaryawanAdministrasi(String nama, int id, double gaji, String departemen) {
+        super(nama, id, gaji);
+        this.departemen = departemen;
+    }
+
+    @Override
+    public void tampilkanInfoKaryawan() {
+        super.tampilkanInfoKaryawan();
+        System.out.println("Departemen: " + departemen);
+    }
+}
+
+class KaryawanProduksi extends KaryawanUmum {
+    private String shiftKerja;
+
+    public KaryawanProduksi(String nama, int id, double gaji, String shiftKerja) {
+        super(nama, id, gaji);
+        this.shiftKerja = shiftKerja;
+    }
+
+    @Override
+    public void tampilkanInfoKaryawan() {
+        super.tampilkanInfoKaryawan();
+        System.out.println("Shift Kerja: " + shiftKerja);
+    }
+}
+
+public class Karyawan_07651 {
+    public static void main(String[] args) {
+        KaryawanAdministrasi admin = new KaryawanAdministrasi("Alice", 101, 5000000, "Keuangan");
+        System.out.println("Informasi Karyawan Administrasi:");
+        admin.tampilkanInfoKaryawan();
+
+        KaryawanProduksi produksi = new KaryawanProduksi("Bob", 102, 4500000, "Shift Malam");
+        System.out.println("\nInformasi Karyawan Produksi:");
+        produksi.tampilkanInfoKaryawan();
+    }
+}
