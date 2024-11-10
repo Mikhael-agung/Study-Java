@@ -1,3 +1,4 @@
+
 class KaryawanUmum {
     protected String nama;
     protected int id;
