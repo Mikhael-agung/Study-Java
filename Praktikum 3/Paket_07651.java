@@ -3,7 +3,7 @@ class Paket {
     protected String resi;
     protected double berat;
     protected String tujuan;
-    private static final double TARIF_DASAR = 5000.0; // Tarif dasar per kg
+    private static double TARIF_DASAR = 5000.0;
 
     public Paket(String resi, double berat, String tujuan) {
         this.resi = resi;
