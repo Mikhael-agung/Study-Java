@@ -19,7 +19,7 @@ interface Pembayaran{
     void bayar(double jumlah);
 }
 
-class Taksi extends Transportasi implements Pembayaran{
+class Taksi extends Transportasi implements Pembayaran                                       {
     double tarifPerKm;
 
 
@@ -37,7 +37,7 @@ class Taksi extends Transportasi implements Pembayaran{
     double hitungTarif(int jarak) {
         return tarifPerKm * jarak;
     }
-
+ 
     @Override
     public void bayar(double jumlah) {
         System.out.println("Bayar dengan uang tunai atau kartu " + jumlah + " Rupiah");

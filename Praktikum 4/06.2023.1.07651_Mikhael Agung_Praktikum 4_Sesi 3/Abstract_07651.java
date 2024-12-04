@@ -1,12 +1,10 @@
 abstract class Animal {
     String nama;
 
-    // Konstruktor untuk menginisialisasi nama
     Animal(String nama) {
         this.nama = nama;
     }
 
-   
     abstract void bersuara();
 
     void sleep() {
@@ -38,7 +36,7 @@ class Dog extends Wolf {
     }
 }
 
-public class Main {
+public class Abstract_07651 {
     public static void main(String[] args) {
         try {
             Wolf seringila = new Wolf("Budyeah");
@@ -53,7 +51,7 @@ public class Main {
             System.out.println(numbers[5]); 
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Error: " + e.getMessage());
-        } finally {
+        } finally {  
             System.out.println("end.");
         }
     }
