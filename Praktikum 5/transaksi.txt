@@ -1,0 +1,5 @@
+Tanggal: 2024-12-01 , Nominal: 50000.0
+Tanggal: 2024-12-02 , Nominal: 150000.0
+Tanggal: 2024-12-03 , Nominal: 75000.0
+Tanggal: 2024-12-04 , Nominal: 200000.0
+Tanggal: 2024-12-05 , Nominal: 100000.0

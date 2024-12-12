@@ -2,7 +2,7 @@ import javax.swing.*;
 
 public class JavaSwing {
     JFrame frame = new JFrame();
-    public void JavaSwing(){
+    public void initialize(){
         frame.setSize(400, 400);
         frame.setTitle("Java Swing");
         frame.setVisible(true);
@@ -11,7 +11,7 @@ public class JavaSwing {
 
     public static void main(String[] args) {
         JavaSwing java = new JavaSwing();
-        java.JavaSwing();
+        java.initialize();
     }
     
 }
